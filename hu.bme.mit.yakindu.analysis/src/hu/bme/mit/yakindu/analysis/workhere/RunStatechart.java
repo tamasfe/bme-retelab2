@@ -32,8 +32,6 @@ public class RunStatechart {
 		RuntimeService.getInstance().registerStatemachine(s, 200);
 		s.init();
 		
-		
-		
 		Scanner input = new Scanner(System.in);
 		while (input.hasNext()) {
 			String cmd = input.nextLine().toLowerCase().trim();

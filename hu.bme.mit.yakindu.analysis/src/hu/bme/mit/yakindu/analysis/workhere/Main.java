@@ -1,13 +1,22 @@
 package hu.bme.mit.yakindu.analysis.workhere;
 
+import java.util.Scanner;
+
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.junit.Test;
+import org.yakindu.base.types.Event;
+import org.yakindu.base.types.Property;
+import org.yakindu.sct.model.sgraph.Scope;
 import org.yakindu.sct.model.sgraph.State;
 import org.yakindu.sct.model.sgraph.Statechart;
 import org.yakindu.sct.model.sgraph.Transition;
+import org.yakindu.sct.model.stext.stext.EventDefinition;
+import org.yakindu.sct.model.stext.stext.VariableDefinition;
 
 import hu.bme.mit.model2gml.Model2GML;
+import hu.bme.mit.yakindu.analysis.RuntimeService;
+import hu.bme.mit.yakindu.analysis.TimerService;
 import hu.bme.mit.yakindu.analysis.modelmanager.ModelManager;
 
 public class Main {
@@ -27,29 +36,30 @@ public class Main {
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
 		
-		int unnamedStateIndex = 1;
+        String varPrintExprs = "";
+        String caseArms = "";
 		while (iterator.hasNext()) {
 			EObject content = iterator.next();
-			if(content instanceof State) {
-				State state = (State) content;
-				String stateName = state.getName();
-				
-				System.out.println(stateName);
-				
-				if (stateName == null || stateName.trim().length() == 0) {
-					stateName = "UnnamedState" + String.valueOf(unnamedStateIndex);
-					System.out.println("State has no name! (" + stateName + ")");
-					unnamedStateIndex += 1;
-				}
-				
-				if (state.getOutgoingTransitions().size() == 0) {
-					System.out.println("no outgoing transitions: " + stateName);
-				}
-			} else if (content instanceof Transition) {
-				Transition t = (Transition) content;
-				System.out.println(t.getSource().getName() + " -> " + t.getTarget().getName());
+           if (content instanceof EventDefinition) {
+				EventDefinition e = (EventDefinition) content;
+				String evName = e.getName();
+				String evNameTitle = evName.substring(0, 1).toUpperCase() + evName.substring(1);
+				caseArms += "case \"" + evName + "\": s.raise" + evNameTitle + "();s.runCycle();break;\n" ;
+			} else if (content instanceof VariableDefinition) {
+				VariableDefinition v = (VariableDefinition) content;
+				String vName = v.getName();
+				String vNameTitle = vName.substring(0, 1).toUpperCase() + vName.substring(1);
+				varPrintExprs += "System.out.println(\"" + vName + " = \" + s.getSCInterface().get"+vNameTitle+"());\n";
 			}
 		}
+				
+		System.out.println("Scanner input = new Scanner(System.in);");
+		System.out.println("while (input.hasNext()) {");
+		System.out.println("String cmd = input.nextLine().toLowerCase().trim();");
+		System.out.println("if (cmd.equals(\"exit\")) {");
+		System.out.println("System.exit(0);}String stateName = cmd;");
+		System.out.println("switch (stateName) {" + caseArms + "}");
+		System.out.println(varPrintExprs);
 		
 		// Transforming the model into a graph representation
 		String content = model2gml.transform(root);
