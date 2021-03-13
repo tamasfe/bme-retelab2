@@ -38,7 +38,7 @@ public class RunStatechart {
 		while (input.hasNext()) {
 			String cmd = input.nextLine().toLowerCase().trim();
 			if (cmd.equals("exit")) {
-				System.exit(0);
+				break;
 			}
 			String stateName = cmd;
 			

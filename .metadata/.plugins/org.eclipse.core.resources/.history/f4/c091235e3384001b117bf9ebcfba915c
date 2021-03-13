@@ -38,25 +38,18 @@ public class RunStatechart {
 		while (input.hasNext()) {
 			String cmd = input.nextLine().toLowerCase().trim();
 			if (cmd.equals("exit")) {
-				System.exit(0);
+				break;
 			}
 			String stateName = cmd;
 			
 			switch (stateName) {
 			case "start":
-				s.raiseStart();
-				s.runCycle();
 				break;
 			case "black":
-				s.raiseBlack();
-				s.runCycle();
 				break;
 			case "white":
-				s.raiseWhite();
-				s.runCycle();
 				break;
 			}
-			print(s);
 		}
 	}
 
