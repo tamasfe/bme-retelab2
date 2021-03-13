@@ -17,7 +17,6 @@
         <outgoingTransitions xmi:id="_26kFsO12Eeaky9HhW8GsWQ" specification="after 1 s/&#xD;&#xA;whiteTime-=1" target="_No5UQO12Eeaky9HhW8GsWQ"/>
       </vertices>
       <vertices xsi:type="sgraph:State" xmi:id="_eLZXcIQuEeupZLuihN7GIg" name="NoOut"/>
-      <vertices xsi:type="sgraph:State" xmi:id="_X1HVYIQvEeupZLuihN7GIg" specification="" name=""/>
     </regions>
   </sgraph:Statechart>
   <notation:Diagram xmi:id="_6_tyoO11Eeaky9HhW8GsWQ" type="org.yakindu.sct.ui.editor.editor.StatechartDiagramEditor" element="_6_kosO11Eeaky9HhW8GsWQ" measurementUnit="Pixel">
@@ -103,22 +102,6 @@
           <styles xsi:type="notation:FontStyle" xmi:id="_eMJlYoQuEeupZLuihN7GIg"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_eMN20IQuEeupZLuihN7GIg" name="isHorizontal" booleanValue="true"/>
           <layoutConstraint xsi:type="notation:Bounds" xmi:id="_eMJlY4QuEeupZLuihN7GIg" x="177" y="27"/>
-        </children>
-        <children xmi:id="_X1NcAIQvEeupZLuihN7GIg" type="State" element="_X1HVYIQvEeupZLuihN7GIg">
-          <children xsi:type="notation:DecorationNode" xmi:id="_X1ODEIQvEeupZLuihN7GIg" type="StateName">
-            <styles xsi:type="notation:ShapeStyle" xmi:id="_X1ODEYQvEeupZLuihN7GIg"/>
-            <layoutConstraint xsi:type="notation:Location" xmi:id="_X1OqIIQvEeupZLuihN7GIg"/>
-          </children>
-          <children xsi:type="notation:Compartment" xmi:id="_X1OqIYQvEeupZLuihN7GIg" type="StateTextCompartment">
-            <children xsi:type="notation:Shape" xmi:id="_X1OqIoQvEeupZLuihN7GIg" type="StateTextCompartmentExpression" fontName="Verdana" lineColor="4210752">
-              <layoutConstraint xsi:type="notation:Bounds" xmi:id="_X1OqI4QvEeupZLuihN7GIg"/>
-            </children>
-          </children>
-          <children xsi:type="notation:Compartment" xmi:id="_X1PRMIQvEeupZLuihN7GIg" type="StateFigureCompartment"/>
-          <styles xsi:type="notation:ShapeStyle" xmi:id="_X1NcAYQvEeupZLuihN7GIg" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
-          <styles xsi:type="notation:FontStyle" xmi:id="_X1NcAoQvEeupZLuihN7GIg"/>
-          <styles xsi:type="notation:BooleanValueStyle" xmi:id="_X1PRMYQvEeupZLuihN7GIg" name="isHorizontal" booleanValue="true"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_X1NcA4QvEeupZLuihN7GIg" x="189" y="-27"/>
         </children>
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_6_tyqu11Eeaky9HhW8GsWQ"/>
       </children>

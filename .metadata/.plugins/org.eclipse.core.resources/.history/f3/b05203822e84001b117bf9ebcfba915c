@@ -26,25 +26,11 @@ public class Main {
 		// Reading model
 		Statechart s = (Statechart) root;
 		TreeIterator<EObject> iterator = s.eAllContents();
-		
-		int unnamedStateIndex = 1;
 		while (iterator.hasNext()) {
 			EObject content = iterator.next();
 			if(content instanceof State) {
 				State state = (State) content;
-				String stateName = state.getName();
-				
-				System.out.println(stateName);
-				
-				if (stateName == null || stateName.trim().length() == 0) {
-					stateName = "UnnamedState" + String.valueOf(unnamedStateIndex);
-					System.out.println("State has no name! (" + stateName + ")");
-					unnamedStateIndex += 1;
-				}
-				
-				if (state.getOutgoingTransitions().size() == 0) {
-					System.out.println("no outgoing transitions: " + state.getName());
-				}
+				System.out.println(state.getName());
 			} else if (content instanceof Transition) {
 				Transition t = (Transition) content;
 				System.out.println(t.getSource().getName() + " -> " + t.getTarget().getName());
