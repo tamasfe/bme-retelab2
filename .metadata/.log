@@ -1,0 +1,27 @@
+!SESSION 2021-03-13 19:17:45.382 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2021-03-13 19:17:47.692
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
+!SESSION 2021-03-13 19:31:56.879 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2021-03-13 19:31:59.353
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
+!SESSION 2021-03-13 19:37:54.225 -----------------------------------------------
+eclipse.buildId=3.5.2.201902261438
+java.version=11.0.6
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.app 0 0 2021-03-13 19:37:56.846
+!MESSAGE Product com.yakindu.sct.products.product could not be found.
